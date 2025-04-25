@@ -65,5 +65,5 @@ const storage = multer.diskStorage({
     const images = loadImages();
     res.render('gallery', { images });
   });
-  
-  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
