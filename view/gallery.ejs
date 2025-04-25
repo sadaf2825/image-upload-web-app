@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+</head>
+<body>
+  <h1>Gallery of Uploaded Images</h1>
+  <a href="/">Home</a>
+  <div>
+    <% if (images.length === 0) { %>
+      <p>No images to display.</p>
+    <% } else { %>
+      <% images.forEach(img => { %>
+        <figure style="display:inline-block; margin:10px;">
+          <img src="/uploads/<%= img.filename %>" width="200" />
+          <figcaption><%= img.original %> - <%= new Date(img.uploadDate).toLocaleString() %></figcaption>
+        </figure>
+      <% }); %>
+    <% } %>
+  </div>
+</body>
+</html>

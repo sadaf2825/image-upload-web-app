@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Image Upload</title>
+</head>
+<body>
+  <h1>Uploaded Images</h1>
+  <a href="/upload">Upload New Image</a> | <a href="/gallery">View Gallery</a>
+  <div>
+    <% if (images.length === 0) { %>
+      <p>No images uploaded yet.</p>
+    <% } else { %>
+      <% images.forEach(img => { %>
+        <div style="display:inline-block; margin:10px;">
+          <img src="/uploads/<%= img.filename %>" width="150" />
+          <p><%= img.original %></p>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+</body>
+</html>
